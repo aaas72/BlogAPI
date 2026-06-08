@@ -1,0 +1,23 @@
+# Node modules
+node_modules/
+
+# Log dosyaları
+logs/
+*.log
+npm-debug.log*
+
+# Ortam değişkenleri
+.env
+.env.test
+
+# Derlenmiş çıktılar
+dist/
+build/
+
+# IDE ve sistem dosyaları
+.vscode/
+.DS_Store
+
+# Yüklenen medya dosyaları
+uploads/
+

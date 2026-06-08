@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Pinyon+Script&family=Alex+Brush&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-signature: "Great Vibes", cursive;
+  --font-pinyon: "Pinyon Script", cursive;
+  --font-alex: "Alex Brush", cursive;
+  --font-serif: "Playfair Display", "Lora", Georgia, serif;
+}
+
+/* ── Animations ──────────────────────────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideLeft {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in   { animation: fadeIn   0.2s ease both; }
+.animate-slide-left { animation: slideLeft 0.25s cubic-bezier(.4,0,.2,1) both; }
+.animate-slide-up  { animation: slideUp  0.2s ease both; }
+
+/* ── Article body typography ────────────────────────── */
+.article-body h2 {
+  font-size: 1.375rem;
+  font-weight: 800;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: #111;
+  font-family: var(--font-serif);
+}
+
+.article-body blockquote {
+  border-left: 3px solid #111;
+  padding: 0.75rem 1.25rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: #555;
+  background: #f8f8f8;
+}
+
+.article-body p {
+  margin-bottom: 1.25rem;
+}
