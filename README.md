@@ -1,6 +1,13 @@
-# Full-Stack Blog Application (Monorepo)
+# Full-Stack Blog Platform
 
-A professional, feature-rich full-stack blog application built with **React (Vite)** on the frontend and **Node.js (Express)** with **MongoDB** on the backend. This project features robust user authentication, post management, nested comments, file uploads, advanced search, a custom analytics system, and an admin dashboard overview.
+A complete blogging platform with authentication, nested comments, advanced search, image uploads, built-in analytics and an admin moderation panel — a React (Vite) client and an Express + MongoDB API in one monorepo.
+
+![React](https://img.shields.io/badge/React_19-20232A?style=flat-square&logo=react&logoColor=61DAFB)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white)
+![Express](https://img.shields.io/badge/Express_5-000000?style=flat-square&logo=express&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white)
+![JWT](https://img.shields.io/badge/JWT-000000?style=flat-square&logo=jsonwebtokens&logoColor=white)
 
 ---
 
@@ -55,7 +62,7 @@ This is a Monorepo containing both the frontend client and the backend server:
 *   Profile avatar upload.
 *   Single cover image upload for posts.
 *   Multi-image upload (up to 5 files).
-*   Integrated with **Multer** and image buffer processors for security and resizing.
+*   Handled with **Multer** and processed with **Sharp**: avatars cropped to 300×300, post images resized to 1200×800.
 
 ### 📊 Analytics & Tracking System
 *   Session-based page view and post view tracking.
@@ -68,7 +75,7 @@ This is a Monorepo containing both the frontend client and the backend server:
 ## 🛠️ Installation & Setup
 
 ### Prerequisites
-*   [Node.js](https://nodejs.org/) (v16+ recommended)
+*   [Node.js](https://nodejs.org/) 20+
 *   [MongoDB](https://www.mongodb.com/try/download/community) (Local instance or MongoDB Atlas URI)
 
 ### 1. Server Configuration & Run
@@ -83,14 +90,14 @@ This is a Monorepo containing both the frontend client and the backend server:
 3.  Create a environment configuration file at `server/config/.env` with the following variables:
     ```env
     PORT=5000
-    MONGO_URI=mongodb://localhost:27017/blog_app_db
+    MONGODB_URI=mongodb://localhost:27017/blog_app_db
     JWT_SECRET=your_jwt_secret_key_here
     SESSION_SECRET=your_session_secret_key_here
     NODE_ENV=development
     ```
 4.  *(Optional)* Seed the database with mock Turkish content for testing:
     ```bash
-    npm run seed
+    node scripts/seed.js
     ```
 5.  Start the development server:
     ```bash
@@ -227,3 +234,9 @@ const dailyStats = await AnalyticsEvent.aggregate([
   { $sort: { date: 1 } }
 ]);
 ```
+
+---
+
+## Author
+
+**Abdellah Sheikh** — [abdellahsheikh.dev](https://abdellahsheikh.dev) · [LinkedIn](https://www.linkedin.com/in/abdellahsheikh)
